@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:include="cdn::cdn">
+<meta charset="ISO-8859-1">
+
+<title>Complaint Status</title>
+</head>
+<body>
+	<div th:include="navbar::nav" ></div>
+	<div class="container-fluid">
+		<h1 class="mainheading m-3 text-center">Complaint Status</h1>
+	</div>
+
+	<div class="table-responsive-sm mx-5 table-hover">
+		<table class="table  table-bordered" id="table">
+			<thead>
+				<tr>
+					<th scope="col">ID</th>
+					<th scope="col">Subject</th>
+					<th scope="col">Type</th>
+					<th scope="col">Complaint To</th>
+					<th scope="col">Complaint By</th>
+					<th scope="col">Complaint Date</th>
+					<th scope="col">Status</th>
+					<th scope="col">Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+				<tr>
+					<th scope="row">
+						
+					</th>
+					<td><a href="statusdetails.jsp?cid=<%=rs.getString("cid")%>">
+							
+					</a></td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td>
+						
+					</td>
+					<td style="color: orange">
+						
+
+					</td>
+					
+					<td>
+						<div class="d-flex flex-direction-row">
+							<a href="reportform.jsp?cid=<%=rs.getString("cid")%>"
+								class="btn btn-warning"> <i class="fa fa-exchange"
+								aria-hidden="true"> </i> Submit Report
+							</a>
+						</div>
+					</td>
+					
+					<td>
+						<div class="d-flex flex-direction-row">
+							<a href="changestatusform.jsp?cid=<%=rs.getString("cid")%>"
+								class="btn btn-warning"> <i class="fa fa-exchange"
+								aria-hidden="true"> </i> Change Status
+							</a>
+						</div>
+					</td>
+					
+				</tr>
+				
+			</tbody>
+		</table>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="cdn::cdn">
+<meta charset="ISO-8859-1">
+<title>ECOPS HOME</title>
+</head>
+<body>
+<div th:include="navbar::nav" ></div>
+	<div class="homediv col-10 col-sm-10 col-lg-10">
+	<div th:if="${session.message}"
+					th:classappend="${session.message}" class="alert alert-danger w-25"
+					role="alert">
+					<!-- <th:block th:text="${#session.removeAttribute('message')}"></th:block> -->
+					<p th:text="${session.message}"></p>
+					<th:block th:text="${#session.removeAttribute('message')}"></th:block>
+				 </div>
+	<h1 class="mainheading mb-5 text-center">E-Cops Your Online
+		Complaint App</h1>
+	<div class="herodiv">
+		<img class="homeImg" src="https://wallpapercave.com/wp/wp7034613.jpg"
+			alt="homeimg">
+		<h3 class="text-center">Taking stock of your security round the
+			clock! Dial 100 in case of any emergency. Help us to help you.</h3>
+		
+		<span th:if="${session.User}"><a href="complaintform.jsp" class="btn complaintbtn mt-5"><i
+			class="fa fa-linode" aria-hidden="true"></i> Issue Complaint</a></span>
+		
+		<span th:unless="${session.User}"><a href="login" class="btn complaintbtn mt-5"><i
+			class="fa fa-linode" aria-hidden="true"></i> Go To Login</a></span>
+		
+	</div>
+</div>
+
+</body>
